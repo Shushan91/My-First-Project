@@ -1,28 +1,26 @@
+import Pages.DropdownPage;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
+import static setup.DriverSetup.quitDriver;
 
-/**
- * Created by sargis on 12/21/17.
- */
+
 public class DropdownTest {
     private ChromeDriver driver;
     private DropdownPage dropdownPage;
 
     @BeforeMethod
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "/Users/sargis/dev/chromedriver/chromedriver");
-        driver = new ChromeDriver();
-        dropdownPage = new DropdownPage(driver);
+        dropdownPage = new DropdownPage();
 
     }
 
     @AfterMethod
     public void tearDown() {
-        driver.close();
+        quitDriver();
     }
 
     @Test
