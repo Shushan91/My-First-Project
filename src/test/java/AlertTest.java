@@ -9,7 +9,7 @@ import static org.testng.Assert.assertEquals;
 /**
  * Created by Shush&Gar on 06-Jan-18.
  */
-public class AlertTest {
+public class AlertTest {                            //add some comments for github
     private ChromeDriver driver;
     private AlertsPage alertsPage;
 
@@ -34,6 +34,7 @@ public class AlertTest {
         alertsPage.alertAcception();
         assertEquals(alertsPage.getResultMessage().getText(), "You successfuly clicked an alert");
         }
+
 
 
     @Test
