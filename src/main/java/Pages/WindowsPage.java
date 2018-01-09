@@ -4,9 +4,7 @@ import org.openqa.selenium.WebDriver;
 
 import static setup.DriverSetup.getDriver;
 
-/**
- * Created by sargis on 12/25/17
- */
+
 public class WindowsPage extends BasePage {
     public WindowsPage() {
         super(getDriver());
