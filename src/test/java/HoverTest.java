@@ -9,22 +9,16 @@ import static org.testng.Assert.assertTrue;
 /**
  * Created by sargis on 12/21/17.
  */
-public class HoverTest {
-    private ChromeDriver driver;
+public class HoverTest extends BaseTest {
+
     private HoverPage hoverPage;
 
     @BeforeMethod
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "C:/Selenium-projects/chromedriver_win32/chromedriver.exe");
-        driver = new ChromeDriver();
-        hoverPage = new HoverPage(driver);
 
+        hoverPage = new HoverPage();
     }
 
-    @AfterMethod
-    public void tearDown() {
-        driver.close();
-    }
 
     @Test
     public void dropdownSelect() {

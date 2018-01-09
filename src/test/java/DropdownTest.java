@@ -8,8 +8,7 @@ import static org.testng.Assert.assertEquals;
 import static setup.DriverSetup.quitDriver;
 
 
-public class DropdownTest {
-    private ChromeDriver driver;
+public class DropdownTest extends  BaseTest {
     private DropdownPage dropdownPage;
 
     @BeforeMethod
@@ -18,10 +17,6 @@ public class DropdownTest {
 
     }
 
-    @AfterMethod
-    public void tearDown() {
-        quitDriver();
-    }
 
     @Test
     public void dropdownSelect() {

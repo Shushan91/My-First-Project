@@ -10,23 +10,15 @@ import static org.testng.Assert.assertEquals;
 /**
  * Created by Shush&Gar on 06-Jan-18.
  */
-public class AlertTest {                            //add some comments for github
-    private ChromeDriver driver;
-    private AlertsPage alertsPage;
+public class AlertTest extends BaseTest {                            //add some comments for github
+        private AlertsPage alertsPage;
 
     @BeforeMethod
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "C:/Selenium-projects/chromedriver_win32/chromedriver.exe");
-        driver = new ChromeDriver();
-        alertsPage = new AlertsPage(driver);
-
+         alertsPage = new AlertsPage();
 
     }
 
-    @AfterMethod
-    public void tearDown() {
-        driver.close();
-    }
 
    @Test
     public void clickButton1() {

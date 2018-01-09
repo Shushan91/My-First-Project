@@ -39,11 +39,15 @@ public class DriverSetup {
 
     public static void quitDriver() {
         if (driver != null) {
+            if (BROWSER.equals("firefox")) {
+                driver.close();
+                driver = null;
+            } else if (BROWSER.equals("chrome")) {
+                driver.close();
+                driver.quit();
+                driver = null;
 
-
-            driver.close();
-            driver.quit();
-            driver = null;
+            }
         }
     }
 

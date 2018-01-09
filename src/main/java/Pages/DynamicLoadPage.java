@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import static setup.DriverSetup.getDriver;
+
 /**
  * Created by sargis on 12/21/17
  */
@@ -12,9 +14,12 @@ public class DynamicLoadPage extends BasePage {
     private By finishText = By.id("finish");
     private By loadingText = By.id("loading");
 
-    public DynamicLoadPage(WebDriver webDriver) {
-        super(webDriver);
-        visit("http://the-internet.herokuapp.com/dynamic_loading/1");
+    public DynamicLoadPage() {
+        super(getDriver());
+        visit(getUrl());
+    }
+    public  String getUrl() {
+        return  BASE_URL+ "/dynamic_loading/1";
     }
 
     public void clickStart() {

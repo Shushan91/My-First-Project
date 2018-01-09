@@ -7,21 +7,13 @@ import org.testng.annotations.Test;
 /**
  * Created by sargis on 12/21/17.
  */
-public class MultiWindowsTest {
-    private ChromeDriver driver;
+public class MultiWindowsTest extends BaseTest {
     private WindowsPage windowsPage;
 
     @BeforeMethod
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "C:/Selenium-projects/chromedriver_win32/chromedriver.exe");
-        driver = new ChromeDriver();
-        windowsPage = new WindowsPage(driver);
+        windowsPage = new WindowsPage();
 
-    }
-
-    @AfterMethod
-    public void tearDown() {
-        driver.close();
     }
 
     @Test

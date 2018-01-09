@@ -5,12 +5,18 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
+import static setup.DriverSetup.getDriver;
+
 public class HoverPage extends BasePage {
-    public HoverPage(WebDriver webDriver) {
-        super(webDriver);
-        visit("http://the-internet.herokuapp.com/hovers");
+    public HoverPage() {
+        super(getDriver());
+        visit(getUrl());
 
         By viewProfile = By.id ("input[name='btnK']");
+    }
+
+    public String getUrl () {
+        return  BASE_URL+ "/hovers";
     }
 
     public void hoverElement(WebElement element){
