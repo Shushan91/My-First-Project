@@ -7,7 +7,7 @@ import static setup.DriverSetup.quitDriver;
  */
 public class BaseTest {
 
-    @AfterMethod
+   @AfterMethod
     public void tearDown() {
         quitDriver();
     }

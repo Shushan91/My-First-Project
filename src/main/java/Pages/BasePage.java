@@ -1,5 +1,7 @@
 package Pages;
 
+import org.apache.commons.logging.Log;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -11,6 +13,7 @@ import java.util.NoSuchElementException;
  * Created by sargis on 12/14/17
  */
 public class BasePage {
+    Logger log  = Logger.getLogger(Log.class.getCanonicalName());
     protected WebDriver driver;
 
     public  static final  String BASE_URL= System.getProperty("selenium.url", "http://the-internet.herokuapp.com");
@@ -21,6 +24,7 @@ public class BasePage {
     }
 
     public void visit(String url) {
+        log.info("Visiting " + url);
         driver.get(url);
     }
 
@@ -33,6 +37,7 @@ public class BasePage {
     }
 
     public WebElement find(String cssSelector) {
+        log.info("finding css selector");
         return find(By.cssSelector(cssSelector));
     }
 
