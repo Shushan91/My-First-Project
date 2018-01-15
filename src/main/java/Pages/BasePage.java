@@ -1,7 +1,6 @@
 package Pages;
 
 import org.apache.commons.logging.Log;
-import org.apache.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -12,8 +11,8 @@ import java.util.NoSuchElementException;
 /**
  * Created by sargis on 12/14/17
  */
-public class BasePage {
-    Logger log  = Logger.getLogger(Log.class.getCanonicalName());
+public abstract class BasePage<T> {
+    Logger log  = Logger.getLogger(Log.class.getName());
     protected WebDriver driver;
 
     public  static final  String BASE_URL= System.getProperty("selenium.url", "http://the-internet.herokuapp.com");

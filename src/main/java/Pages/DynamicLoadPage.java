@@ -25,9 +25,9 @@ public class DynamicLoadPage extends BasePage {
 
 
     public DynamicLoadPage() {
-        super(getDriver());
+        //super(getDriver());
         visit(getUrl());
-        PageFactory.initElements(driver,this);
+       // PageFactory.initElements(driver,this);
 
 
     }
