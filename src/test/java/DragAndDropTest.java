@@ -1,5 +1,4 @@
-import Pages.DragAndDropPage;
-import Pages.DropdownPage;
+import pages.DragAndDropPage;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 

@@ -1,7 +1,5 @@
 
-import Pages.AlertsPage;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterMethod;
+import pages.AlertsPage;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -25,7 +23,7 @@ public class AlertTest extends BaseTest {
         alertsPage.clickAlert();
         alertsPage.getAlertMessage();
         alertsPage.alertAcception();
-        assertEquals(alertsPage.getResultMessage().getText(), "You successfuly clicked an alert");
+        assertEquals(alertsPage.getResultMessage().getText(), "You successfuly clicked an alert11");
         }
 
 

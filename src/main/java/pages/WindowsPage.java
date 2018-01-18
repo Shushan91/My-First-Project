@@ -1,8 +1,4 @@
-package Pages;
-
-import org.openqa.selenium.WebDriver;
-
-import static setup.DriverSetup.getDriver;
+package pages;
 
 
 public class WindowsPage extends BasePage {

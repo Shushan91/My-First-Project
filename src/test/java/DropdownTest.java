@@ -1,11 +1,8 @@
-import Pages.DropdownPage;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterMethod;
+import pages.DropdownPage;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
-import static setup.DriverSetup.quitDriver;
 
 
 public class DropdownTest extends  BaseTest {

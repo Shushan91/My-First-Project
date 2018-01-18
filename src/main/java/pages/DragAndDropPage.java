@@ -1,11 +1,8 @@
-package Pages;
+package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.*;
-
-
-import static setup.DriverSetup.getDriver;
 
 /**
  * Created by Shush&Gar on 08-Jan-18.

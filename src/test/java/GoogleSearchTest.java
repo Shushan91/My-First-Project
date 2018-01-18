@@ -1,4 +1,4 @@
-import Pages.GoogleSearchPage;
+import pages.GoogleSearchPage;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;

@@ -1,6 +1,4 @@
-import Pages.HoverPage;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterMethod;
+import pages.HoverPage;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 

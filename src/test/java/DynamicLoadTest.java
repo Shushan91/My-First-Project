@@ -1,6 +1,4 @@
-import Pages.DynamicLoadPage;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterMethod;
+import pages.DynamicLoadPage;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
