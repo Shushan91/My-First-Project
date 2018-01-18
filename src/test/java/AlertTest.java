@@ -10,8 +10,8 @@ import static org.testng.Assert.assertEquals;
 /**
  * Created by Shush&Gar on 06-Jan-18.
  */
-public class AlertTest extends BaseTest {                            //add some comments for github
-        private AlertsPage alertsPage;
+public class AlertTest extends BaseTest {
+    private AlertsPage alertsPage;
 
     @BeforeMethod
     public void setUp() {

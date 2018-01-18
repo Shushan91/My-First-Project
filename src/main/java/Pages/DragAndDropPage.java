@@ -12,7 +12,6 @@ import static setup.DriverSetup.getDriver;
  */
 public class DragAndDropPage extends BasePage {
     public DragAndDropPage() {
-        super(getDriver());
         visit(getUrl());
     }
 

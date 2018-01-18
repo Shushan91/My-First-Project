@@ -7,7 +7,6 @@ import static setup.DriverSetup.getDriver;
 
 public class WindowsPage extends BasePage {
     public WindowsPage() {
-        super(getDriver());
         visit(getUrl());
     }
 

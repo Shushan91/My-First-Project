@@ -1,12 +1,15 @@
 package Pages;
 
 import org.apache.commons.logging.Log;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 import java.util.NoSuchElementException;
+
+import static setup.DriverSetup.getDriver;
 
 /**
  * Created by sargis on 12/14/17
@@ -18,8 +21,8 @@ public abstract class BasePage<T> {
     public  static final  String BASE_URL= System.getProperty("selenium.url", "http://the-internet.herokuapp.com");
 
 
-    public BasePage(WebDriver webDriver) {
-        this.driver = webDriver;
+    public BasePage() {
+        this.driver = getDriver();
     }
 
     public void visit(String url) {

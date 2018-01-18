@@ -15,7 +15,6 @@ public class GoogleSearchPage extends BasePage{
 
 
     public GoogleSearchPage(WebDriver webDriver) {
-        super(webDriver);
         visit("http://google.com");
     }
 

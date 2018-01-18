@@ -11,7 +11,6 @@ import static setup.DriverSetup.getDriver;
 public class AlertsPage extends BasePage {
 
     public AlertsPage() {
-        super(getDriver());
         visit(getUrl());
     }
 

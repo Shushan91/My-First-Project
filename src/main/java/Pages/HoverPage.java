@@ -9,7 +9,6 @@ import static setup.DriverSetup.getDriver;
 
 public class HoverPage extends BasePage {
     public HoverPage() {
-        super(getDriver());
         visit(getUrl());
 
         By viewProfile = By.id ("input[name='btnK']");
