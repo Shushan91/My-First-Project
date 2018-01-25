@@ -23,7 +23,7 @@ public class AlertTest extends BaseTest {
         alertsPage.clickAlert();
         alertsPage.getAlertMessage();
         alertsPage.alertAcception();
-        assertEquals(alertsPage.getResultMessage().getText(), "You successfuly clicked an alert11");
+        assertEquals(alertsPage.getResultMessage().getText(), "You successfuly clicked an alert");
         }
 
 
@@ -33,7 +33,7 @@ public class AlertTest extends BaseTest {
         alertsPage.clickConfirm();
         alertsPage.getAlertMessage();
         alertsPage.alertDismission();
-        assertEquals(alertsPage.getResultMessage().getText(),"You clicked: Cancel");
+        assertEquals(alertsPage.getResultMessage().getText(),"You clicked: Cancel//////");
 
     }
 

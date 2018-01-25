@@ -23,6 +23,7 @@ public class DriverSetup {
 
                     System.setProperty("webdriver.chrome.driver", chromeDriverLocation);
                     driver = new ChromeDriver();
+                    driver.manage().window().fullscreen();
                     break;
 
                 case "firefox":
@@ -31,6 +32,7 @@ public class DriverSetup {
                             "C:/Selenium-projects/chromedriver_win32/chromedriver.exe");
                     System.setProperty("webdriver.gecko.driver", firefoxDriverLocation);
                     driver = new FirefoxDriver();
+                    driver.manage().window().fullscreen();
                     break;
             }
         }

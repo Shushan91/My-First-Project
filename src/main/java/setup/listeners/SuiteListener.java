@@ -27,7 +27,7 @@ public class SuiteListener extends TestListenerAdapter {
         Log.info("Taking Screenshot");
         File scrFile = ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.FILE);
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
-        File screenShotName = new File(".\\target\\screenshots\\" + currentTest.getName() +timeStamp + ".png");
+        File screenShotName = new File("./target/screenshots/" + currentTest.getName() + timeStamp + ".png");
         try {
             FileUtils.copyFile(scrFile, screenShotName);
         } catch (IOException e) {
@@ -35,8 +35,15 @@ public class SuiteListener extends TestListenerAdapter {
         }
 
         Log.info("**************");
-        Log.info("Failed--->"+ currentTest.getName());
+        Log.info("Failed--->" + currentTest.getName());
         Log.info("**************");
+
+
+    }
+
+    @Override
+    public void onTestStart(ITestResult currentTest) {
+
 
     }
 
