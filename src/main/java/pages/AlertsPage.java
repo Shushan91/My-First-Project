@@ -3,12 +3,15 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import static setup.DriverSetup.getDriver;
+
 /**
  * Created by Shush&Gar on 05-Jan-18.
  */
 public class AlertsPage extends BasePage {
 
     public AlertsPage() {
+        super(getDriver());
         visit(getUrl());
     }
 

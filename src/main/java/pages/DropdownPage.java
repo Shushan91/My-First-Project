@@ -6,9 +6,12 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
+import static setup.DriverSetup.getDriver;
+
 
 public class DropdownPage extends BasePage {
     public DropdownPage() {
+        super(getDriver());
         visit(getURL());
     }
 

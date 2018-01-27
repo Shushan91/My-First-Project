@@ -4,11 +4,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.*;
 
+import static setup.DriverSetup.getDriver;
+
 /**
  * Created by Shush&Gar on 08-Jan-18.
  */
 public class DragAndDropPage extends BasePage {
     public DragAndDropPage() {
+        super(getDriver());
         visit(getUrl());
     }
 

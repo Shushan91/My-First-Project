@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
+import static setup.DriverSetup.getDriver;
+
 /**
  * Created by sargis on 12/18/17
  */
@@ -15,6 +17,7 @@ public class GoogleSearchPage extends BasePage{
 
 
     public GoogleSearchPage(WebDriver webDriver) {
+        super(getDriver());
         visit("http://google.com");
     }
 

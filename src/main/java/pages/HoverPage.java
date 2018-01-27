@@ -4,8 +4,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
+import static setup.DriverSetup.getDriver;
+
 public class HoverPage extends BasePage {
     public HoverPage() {
+        super(getDriver());
         visit(getUrl());
 
         By viewProfile = By.id ("input[name='btnK']");

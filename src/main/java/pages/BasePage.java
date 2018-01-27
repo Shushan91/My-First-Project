@@ -21,7 +21,7 @@ public abstract class BasePage<T> {
     public  static final  String BASE_URL= System.getProperty("selenium.url", "http://the-internet.herokuapp.com");
 
 
-    public BasePage() {
+    public BasePage(WebDriver driver) {
         this.driver = getDriver();
     }
 

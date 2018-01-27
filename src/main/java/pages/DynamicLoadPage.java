@@ -3,6 +3,8 @@ package pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import static setup.DriverSetup.getDriver;
+
 /**
  * Created by sargis on 12/21/17
  */
@@ -20,9 +22,9 @@ public class DynamicLoadPage extends BasePage {
 
 
     public DynamicLoadPage() {
-        //super(getDriver());
+        super(getDriver());
         visit(getUrl());
-       // PageFactory.initElements(driver,this);
+
 
 
     }
