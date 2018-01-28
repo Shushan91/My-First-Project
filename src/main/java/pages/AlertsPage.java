@@ -2,6 +2,8 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import setup.WaitHelper;
 
 import static setup.DriverSetup.getDriver;
 
@@ -11,18 +13,25 @@ import static setup.DriverSetup.getDriver;
 public class AlertsPage extends BasePage {
 
     public AlertsPage() {
-        super(getDriver());
         visit(getUrl());
     }
 
     public String getUrl() {
         return BASE_URL + "/javascript_alerts";
     }
-    private By jsAlert = By.cssSelector("div#content li:nth-child(1) > button");
-    private By jsConfirm = By.cssSelector("div#content li:nth-child(2) > button");
-    private By jsPromt = By.cssSelector("div#content li:nth-child(3) > button");
 
-    private  By jsResult= By.id("result");
+
+    @FindBy(id = "result")
+    private WebElement jsResult;
+
+    @FindBy(css = "div#content li:nth-child(1) > button")
+    private WebElement jsAlert;
+
+    @FindBy(css= "div#content li:nth-child(2) > button")
+    private WebElement jsConfirm;
+
+    @FindBy(css= "div#content li:nth-child(3) > button")
+    private WebElement jsPromt;
 
 
 
@@ -31,11 +40,18 @@ public class AlertsPage extends BasePage {
     }
 
     public boolean isAlertDisplayed() {
-       return   (isDisplayed(find(jsResult), 100));
+        try {
+            WaitHelper.getWait().waitForElementToBeVisible(jsResult);
+            return true;
+        } catch (Error e) {
 
+            return false;
+        }
     }
-    public WebElement getResultMessage (){
-        return find(jsResult);
+
+
+    public WebElement getResultMessage() {
+        return jsResult;
 
     }
 

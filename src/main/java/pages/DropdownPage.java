@@ -3,24 +3,25 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-import static setup.DriverSetup.getDriver;
-
 
 public class DropdownPage extends BasePage {
+    @FindBy(id="dropdown")
+    private WebElement dropdownField;
+
     public DropdownPage() {
-        super(getDriver());
-        visit(getURL());
+        visit(getUrl());
     }
 
-    public String getURL() {
+    public String getUrl() {
         return BASE_URL+"/dropdown";
     }
 
     public WebElement getDropdown() {
-        return find(By.id("dropdown"));
+        return dropdownField;
     }
 
     public List<WebElement> getDropdownOptions() {

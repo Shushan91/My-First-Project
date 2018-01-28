@@ -3,7 +3,9 @@ package pages;
 import org.apache.commons.logging.Log;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.*;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.LoadableComponent;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
@@ -14,20 +16,23 @@ import static setup.DriverSetup.getDriver;
 /**
  * Created by sargis on 12/14/17
  */
-public abstract class BasePage<T> {
+public abstract class BasePage <T extends LoadableComponent<T>> extends LoadableComponent<T> {
     Logger log  = Logger.getLogger(Log.class.getName());
     protected WebDriver driver;
 
-    public  static final  String BASE_URL= System.getProperty("selenium.url", "http://the-internet.herokuapp.com");
+    public  static final  String BASE_URL=
+            System.getProperty("selenium.url", "http://the-internet.herokuapp.com");
 
 
-    public BasePage(WebDriver driver) {
-        this.driver = getDriver();
+    public BasePage() {
+        driver = getDriver();
+        PageFactory.initElements(driver, this);
     }
 
     public void visit(String url) {
         log.info("Visiting " + url);
         driver.get(url);
+        this.get();
     }
 
     public WebElement find(By locator) {
@@ -75,25 +80,8 @@ public abstract class BasePage<T> {
         }
     }
 
-    public boolean isDisplayed(WebElement element, Integer timeout) {
-        try {
-            WebDriverWait wait = new WebDriverWait(driver, timeout);
-            wait.until(ExpectedConditions.visibilityOf(element));
-        } catch (TimeoutException e) {
-            return false;
-        }
-        return true;
-    }
 
-    public boolean isNotDisplayed(WebElement element, Integer timeout) {
-        try {
-            WebDriverWait wait = new WebDriverWait(driver, timeout);
-            wait.until(ExpectedConditions.invisibilityOf(element));
-        } catch (TimeoutException e) {
-            return false;
-        }
-        return true;
-    }
+
 
     public boolean isDisplayed(By locator) {
         return isDisplayed(find(locator));
@@ -124,4 +112,16 @@ public abstract class BasePage<T> {
         Alert alert= driver.switchTo().alert();
         alert.sendKeys(mess);
     }
+    public abstract String getUrl();
+
+    @Override
+    protected void load() {
+
+    }
+
+    @Override
+    protected void isLoaded() throws Error {
+        driver.getCurrentUrl().contains(getUrl());
+    }
+
 }

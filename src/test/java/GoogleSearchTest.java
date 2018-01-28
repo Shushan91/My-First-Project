@@ -9,7 +9,7 @@ import static org.testng.Assert.assertTrue;
 /**
  * Created by sargis on 12/18/17
  */
-public class GoogleSearchTest {
+/*public class GoogleSearchTest {
     private GoogleSearchPage googleSearchPage;
     private ChromeDriver driver;
 
@@ -34,4 +34,4 @@ public class GoogleSearchTest {
 
 
     }
-}
+}*/

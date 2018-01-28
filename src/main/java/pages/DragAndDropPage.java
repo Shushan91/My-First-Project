@@ -3,6 +3,9 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.*;
+import org.openqa.selenium.support.FindBy;
+import setup.WaitHelper;
+import org.openqa.selenium.interactions.Actions;
 
 import static setup.DriverSetup.getDriver;
 
@@ -10,33 +13,49 @@ import static setup.DriverSetup.getDriver;
  * Created by Shush&Gar on 08-Jan-18.
  */
 public class DragAndDropPage extends BasePage {
+    @FindBy(css = ".ui-draggable")
+    private WebElement draggable;
+
+    @FindBy(css = ".ui-droppable")
+    private WebElement droppable;
+
+
     public DragAndDropPage() {
-        super(getDriver());
         visit(getUrl());
+
+    }
+
+    @Override
+    protected void load() {
+
+    }
+
+    @Override
+    protected void isLoaded() throws Error {
+        WaitHelper.getWait()
+                .waitForElementToBeVisible(draggable)
+                .waitForElementClickable(draggable);
     }
 
     public String getUrl() {
-        return BASE_URL + "/drag_and_drop";
-    }
-
-    public WebElement dragable() {
-        return find(By.id("column-a"));
-
-    }
-
-    public WebElement dropable() {
-        return find(By.id("column-b"));
+        return "http://jqueryui.com/resources/demos/droppable/default.html";
     }
 
 
-    public void dragAndDropAction() {
-        Actions builder = new Actions(driver);
-        Action dragdrop = builder.clickAndHold(dragable())
-                .moveToElement(dropable())
-                .release(dropable())
-                .build();
-        builder.perform();
+    public void dragAndDrop(WebElement draggable, WebElement target) {
+        Actions actions = new Actions(getDriver());
+        actions.dragAndDrop(draggable, target)
+                .build()
+                .perform();
     }
 
+    public void dragAndDrop() {
+        log.info("Dragging the Element");
+        dragAndDrop(draggable,droppable);
+    }
+
+    public String getDropText() {
+        return droppable.getText();
+    }
 
 }

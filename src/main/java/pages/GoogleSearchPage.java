@@ -11,14 +11,13 @@ import static setup.DriverSetup.getDriver;
 /**
  * Created by sargis on 12/18/17
  */
-public class GoogleSearchPage extends BasePage{
+public class GoogleSearchPage extends BasePage {
     private By searchInput = By.cssSelector("input#lst-ib");
     private By searchButton = By.cssSelector("input[name='btnK']");
 
 
-    public GoogleSearchPage(WebDriver webDriver) {
-        super(getDriver());
-        visit("http://google.com");
+    public GoogleSearchPage() {
+        visit(getUrl());
     }
 
     public void clickSearchButton() {
@@ -37,5 +36,10 @@ public class GoogleSearchPage extends BasePage{
     public WebElement getFirstResult() {
         List<WebElement> elements = findElements(By.cssSelector(".rc .r"));
         return elements.get(0);
+    }
+
+    @Override
+    public String getUrl() {
+        return "wwww.google.com";
     }
 }

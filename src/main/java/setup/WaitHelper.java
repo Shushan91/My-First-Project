@@ -53,7 +53,16 @@ public class WaitHelper {
     public WaitHelper waitForElementToBeVisible(String cssSelector){
         return  waitForElementToBeVisible(By.cssSelector(cssSelector));
     }
-
+    public WaitHelper waitForElementClickable(WebElement element) {
+        try {
+            log.info("Waiting for element to be visible " + element.toString());
+            new WebDriverWait(getDriver(), DEFAULT_TIMEOUT)
+                    .until(ExpectedConditions.elementToBeClickable(element));
+            return this;
+        } catch (WebDriverException e) {
+            throw new Error("Element was not visible " + element.toString());
+        }
+    }
 
     public WaitHelper waitForUrlChangedFrom(final String oldUrl){
         log.info("Waiting for url change from "+oldUrl);
@@ -63,4 +72,5 @@ public class WaitHelper {
         });
         return this;
     }
+
 }

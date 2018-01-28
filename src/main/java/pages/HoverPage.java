@@ -3,22 +3,26 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
+import setup.WaitHelper;
 
 import static setup.DriverSetup.getDriver;
 
 public class HoverPage extends BasePage {
+    @FindBy(className = "figcaption")
+    private WebElement figcaption;
+
+
     public HoverPage() {
-        super(getDriver());
         visit(getUrl());
-
-        By viewProfile = By.id ("input[name='btnK']");
     }
 
-    public String getUrl () {
-        return  BASE_URL+ "/hovers";
+    @Override
+    public String getUrl() {
+        return BASE_URL + "/hovers";
     }
 
-    public void hoverElement(WebElement element){
+    public void hoverElement(WebElement element) {
         Actions actions = new Actions(driver);
         actions.moveToElement(element).build().perform();
     }
@@ -29,16 +33,21 @@ public class HoverPage extends BasePage {
     }
 
     public boolean isHeaderDisplayed() {
-        return isDisplayed(By.className("figcaption"));
+        return isDisplayed(figcaption);
     }
 
     public boolean isHeaderNotDisplayed() {
-        return isNotDisplayed(find(By.className("figcaption")), 5);
+        try {
+            WaitHelper.getWait().waitForElementNotVisible(figcaption);
+            return true;
+        } catch (Error e) {
+            return false;
+        }
     }
 
     public WebElement getHeader() {
         hoverAvatar();
-        return find(By.className("figcaption"));
+        return figcaption;
     }
 
 }

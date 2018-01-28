@@ -9,12 +9,11 @@ import org.openqa.selenium.firefox.FirefoxDriver;
  */
 public class DriverSetup {
     private static WebDriver driver;
-    public static String BROWSER = System.getProperty("selenium.browser", "chrome");
+    public static String BROWSER =
+            System.getProperty("selenium.browser", "chrome");
 
     public static WebDriver getDriver() {
         if (driver == null) {
-
-
             switch (BROWSER) {
                 case "chrome":
 
