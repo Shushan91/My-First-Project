@@ -6,8 +6,6 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import setup.WaitHelper;
 
-import static setup.DriverSetup.getDriver;
-
 public class HoverPage extends BasePage {
     @FindBy(className = "figcaption")
     private WebElement figcaption;

@@ -1,11 +1,8 @@
 package pages;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import pages.BasePage;
-
-import static setup.DriverSetup.getDriver;
+import setup.WaitHelper;
 
 /**
  * Created by Shush&Gar on 25-Jan-18.
@@ -17,7 +14,6 @@ public class GetUrlPage extends BasePage {
 
     public GetUrlPage() {
         visit(getUrl());
-
     }
 
     @Override
@@ -25,8 +21,15 @@ public class GetUrlPage extends BasePage {
         return "http://www.phptravels.net";
     }
 
+    public boolean isUrlChanged() {
+        try {
+            WaitHelper.getWait().waitForUrlChangedFrom( "http://www.phptravels.net/");
+            return true;
+        } catch (Error e) {
 
-
+            return false;
+        }
+    }
 
 
     public void clickFlight() {

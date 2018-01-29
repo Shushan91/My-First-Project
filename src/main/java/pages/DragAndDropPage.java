@@ -1,11 +1,9 @@
 package pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import setup.WaitHelper;
-import org.openqa.selenium.interactions.Actions;
 
 import static setup.DriverSetup.getDriver;
 

@@ -5,8 +5,6 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.testng.ITestResult;
 import org.testng.TestListenerAdapter;
-import sun.java2d.pipe.SpanShapeRenderer;
-import sun.util.resources.cldr.mas.CalendarData_mas_TZ;
 
 import java.io.File;
 import java.io.IOException;

@@ -3,8 +3,6 @@ package pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import static setup.DriverSetup.getDriver;
-
 public class WindowsPage extends BasePage {
     public WindowsPage() {
         visit(getUrl());
