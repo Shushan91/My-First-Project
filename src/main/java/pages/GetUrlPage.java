@@ -4,9 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import setup.WaitHelper;
 
-/**
- * Created by Shush&Gar on 25-Jan-18.
- */
+
 public class GetUrlPage extends BasePage {
 
     @FindBy(css = "a.leader")
