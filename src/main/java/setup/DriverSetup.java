@@ -73,7 +73,7 @@ public class DriverSetup {
             protected WebDriver initialValue() {
                 WebDriver webDriver = null;
                 try {
-                    capability.setCapability(CapabilityType.PLATFORM_NAME, Pl );
+                    capability.setCapability(CapabilityType.PLATFORM_NAME, Platform.LINUX );
                     webDriver = new RemoteWebDriver(new URL("http//Shushan91:3b27ed26-1f0f-491d-b200-0b10689493d3.saucelabs.com:80/wd/hub"), capability);
                     webDriverPool.add(webDriver);
                 } catch (MalformedURLException e) {
