@@ -74,7 +74,7 @@ public class DriverSetup {
                 WebDriver webDriver = null;
                 try {
                     capability.setCapability(CapabilityType.PLATFORM_NAME, Platform.LINUX );
-                    webDriver = new RemoteWebDriver(new URL("http//Shushan91:3b27ed26-1f0f-491d-b200-0b10689493d3.saucelabs.com:80/wd/hub"), capability);
+                    webDriver = new RemoteWebDriver(new URL("http://Shushan91:e96fce21-8e8c-4c69-a9c8-2fa8b9c5bca6@ondemand.saucelabs.com:80/wd/hub"), capability);
                     webDriverPool.add(webDriver);
                 } catch (MalformedURLException e) {
                     e.printStackTrace();
