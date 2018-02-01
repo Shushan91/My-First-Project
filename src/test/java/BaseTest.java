@@ -1,4 +1,4 @@
-import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.Listeners;
 import setup.listeners.SuiteListener;
 
@@ -12,7 +12,7 @@ import static setup.DriverSetup.quitDriver;
 
 public  abstract class BaseTest {
 
-   @AfterClass
+   @AfterTest
     public void tearDown() {
         quitDriver();
     }

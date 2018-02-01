@@ -7,9 +7,6 @@ import setup.WaitHelper;
 
 public class GetUrlPage extends BasePage {
 
-    @FindBy(css = "a.leader")
-    private WebElement clickFlight;
-
     public GetUrlPage() {
         visit(getUrl());
     }
@@ -19,9 +16,12 @@ public class GetUrlPage extends BasePage {
         return "http://www.phptravels.net";
     }
 
-    public boolean isUrlChanged() {
+    @FindBy(css = "a.loader")    ////a[contains(.,'Flights')]
+    private WebElement clickFlight;
+
+    public boolean isUrlChanged(String path) {
         try {
-            WaitHelper.getWait().waitForUrlChangedFrom( "http://www.phptravels.net/");
+            WaitHelper.getWait().waitForUrlChangedFrom(path);
             return true;
         } catch (Error e) {
 
@@ -31,6 +31,7 @@ public class GetUrlPage extends BasePage {
 
 
     public void clickFlight() {
+        WaitHelper.getWait().waitForElementClickable(clickFlight);
         click(clickFlight);
     }
 

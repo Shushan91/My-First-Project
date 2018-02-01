@@ -21,8 +21,6 @@ public class DynamicLoadPage extends BasePage {
 
     public DynamicLoadPage() {
         visit(getUrl());
-
-
     }
 
     public String getUrl() {

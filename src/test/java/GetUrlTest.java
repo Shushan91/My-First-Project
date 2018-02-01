@@ -1,8 +1,13 @@
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 import pages.GetUrlPage;
+
+import static org.testng.AssertJUnit.assertTrue;
 
 /**
  * Created by Shush&Gar on 25-Jan-18.
+ * <p>
+ *
  */
 public class GetUrlTest extends BaseTest {
 
@@ -10,17 +15,18 @@ public class GetUrlTest extends BaseTest {
 
     @BeforeMethod
     public void setUp() {
-        getUrlPage = (GetUrlPage) new GetUrlPage().get();
+        getUrlPage = new GetUrlPage();
 
     }
 
-   /* @Test
+    @Test
     public void getUrlTest() {
-
+        assertTrue(getUrlPage.isUrlChanged("http://www.phptravels.net/"));
         getUrlPage.clickFlight();
-        assertTrue(getUrlPage.getCurrentUrl().contains("flightst"));
+        assertTrue(getUrlPage.isUrlChanged("http://www.phptravels.net/flightst/"));
 
-    }*/
+
+    }
 
 
 }
